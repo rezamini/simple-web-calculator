@@ -8,29 +8,32 @@
     <link href="./css/styles.css" rel="stylesheet" />
   </head>
   <body class="p-0 m-0 bg-gradient-to-r from-[#D8B5FF] to-[#1EAE98]">
-    <div id="calulator-grid">
+    <div
+      id="calulator-grid"
+      class="grid justify-center content-center min-h-screen grid-cols-[repeat(4,minmax(100px,100px))] grid-rows-[minmax(100px,100px)repeat(5,minmax(100px,100px))]"
+    >
       <div id="output">
-        <div>123 +</div>
-        <div>777</div>
+        <div id="previous-operand">123 +</div>
+        <div id="current-operand">777</div>
       </div>
-      <button>AC</button>
-      <button>DEL</button>
-      <button>÷</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>*</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>+</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>-</button>
-      <button>.</button>
-      <button>0</button>
-      <button>=</button>
+      <button class="btn col-span-2">AC</button>
+      <button class="btn">DEL</button>
+      <button class="btn">÷</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">*</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">+</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">-</button>
+      <button class="btn">.</button>
+      <button class="btn">0</button>
+      <button class="btn col-span-2">=</button>
     </div>
   </body>
 </html>
