@@ -12,9 +12,12 @@
       id="calulator-grid"
       class="grid justify-center content-center min-h-screen grid-cols-[repeat(4,minmax(100px,100px))] grid-rows-[minmax(100px,100px)repeat(5,minmax(100px,100px))]"
     >
-      <div id="output">
-        <div id="previous-operand">123 +</div>
-        <div id="current-operand">777</div>
+      <div
+        id="output"
+        class="col-span-full bg-black/75 flex justify-around items-end flex-col p-[10px] break-all"
+      >
+        <div id="previous-operand" class="text-white/75 text-xl">123 +</div>
+        <div id="current-operand" class="text-white text-4xl">777</div>
       </div>
       <button class="btn col-span-2">AC</button>
       <button class="btn">DEL</button>
