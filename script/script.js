@@ -34,3 +34,27 @@ const previousOperandElement = document.querySelector("[data-previous-operand]")
 const currentOperandElement = document.querySelector("[data-current-operand]");
 
 const calculator = new Calculator(previousOperandElement, currentOperandElement);
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+equalsButton.addEventListener('click', button => {
+    calculator.compute();
+    calculator.updateDisplay();
+});
+
+allClearButton.addEventListener('click', () => {
+    calculator.clear();
+    calculator.updateDisplay();
+});
