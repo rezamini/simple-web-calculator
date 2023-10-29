@@ -3,6 +3,8 @@ class Calculator {
     constructor(previousOperandElement, currentOperandElement){
         this.previousOperandElement = previousOperandElement;
         this.currentOperandElement = currentOperandElement;
+        this.clear();
+        this.updateDisplay();
     }
 
     clear() {
@@ -13,6 +15,8 @@ class Calculator {
     }
 
     appendNumber(number){
+        if(number === '.' && this.currentOperand.includes('.')) return;
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
     chooseOperation(operation){
@@ -22,6 +26,8 @@ class Calculator {
     }
 
     updateDisplay() {
+        this.previousOperandElement.innerText = this.previousOperand;
+        this.currentOperandElement.innerText = this.currentOperand;
     }
 }
 
