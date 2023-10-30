@@ -8,6 +8,9 @@ class Calculator {
     }
 
     clear() {
+        this.previousOperand = '';
+        this.currentOperand = '';
+        this.operation = undefined;
     }
 
     delete() {
@@ -20,9 +23,13 @@ class Calculator {
     }
 
     chooseOperation(operation){
+        this.operation = operation;
+        this.previousOperand = this.currentOperand.toString() ;
+        this.currentOperand = '';
     }
 
     compute() {
+
     }
 
     updateDisplay() {
