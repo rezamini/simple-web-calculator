@@ -16,7 +16,7 @@ class Calculator {
     delete() {
 
     }
-
+    
     appendNumber(number){
         if(number === '.' && this.currentOperand.includes('.')) return;
         this.currentOperand = this.currentOperand.toString() + number.toString();
@@ -29,13 +29,39 @@ class Calculator {
     }
 
     compute() {
+        let computation;
+        const previous = parseFloat(this.previousOperand);
+        const current = parseFloat(this.currentOperand);
 
+        if(isNaN(previous) || isNaN(current)) return;
+
+        switch (this.operation) {
+            case '+':
+                computation = previous + current;
+                break;
+            case '-':
+                computation = previous - current;
+                break;
+            case '*':
+                computation = previous * current;
+                break;
+            case '÷':
+                computation = previous / current;
+                break;
+            default:
+                break;
+        }
+
+        this.currentOperand = computation;
+        this.operation = undefined;
+        this.previousOperand = '';
     }
 
     updateDisplay() {
-        this.previousOperandElement.innerText = this.previousOperand;
-        this.currentOperandElement.innerText = this.currentOperand;
+        this.currentOperandElement.innerText = this.getDisplayNumber(this.currentOperand);
+        this.previousOperandElement.innerText = this.getDisplayNumber(this.previousOperand);
     }
+
 }
 
 const numberButtons = document.querySelectorAll("[data-number]");
