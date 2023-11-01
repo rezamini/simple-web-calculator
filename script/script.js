@@ -67,6 +67,22 @@ class Calculator {
         this.previousOperandElement.innerText = this.getDisplayNumber(this.previousOperand);
     }
 
+    getDisplayNumber(number){
+        const stringNumber = number.toString().split('.');
+        let integerDigits = parseFloat(stringNumber[0]);
+        let decimalDigits = stringNumber[1];
+        let finalNumber ='';
+        
+        if(!isNaN(integerDigits)){
+            finalNumber = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
+        }
+
+        if(decimalDigits != null){
+            finalNumber = `${finalNumber}.${decimalDigits}`;
+        }
+
+        return finalNumber;
+    }
 }
 
 const numberButtons = document.querySelectorAll("[data-number]");
