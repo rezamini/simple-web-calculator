@@ -5,39 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
-    <script src="./script/script.js" defer ></script>
+    <script src="./script/script.js" defer></script>
     <link href="./css/styles.css" rel="stylesheet" />
   </head>
-  <body class="p-0 m-0 bg-gradient-to-r from-[#D8B5FF] to-[#1EAE98]">    
-    <div
-      id="calulator-grid"
-      class="grid justify-center content-center min-h-screen grid-cols-[repeat(4,minmax(100px,100px))] grid-rows-[minmax(100px,auto)repeat(5,minmax(100px,100px))]"
-    >
+  <body class="p-0 m-0 bg-gradient-to-r from-[#D8B5FF] to-[#1EAE98] ">
+    <div class="flex justify-center items-center h-screen ">
       <div
-        id="output"
-        class="col-span-full bg-black/75 flex justify-around items-end flex-col p-[10px] break-all"
+        id="calulator-grid"
+        class="grid justify-center content-center grid-cols-[repeat(4,minmax(100px,100px))] grid-rows-[minmax(100px,auto)repeat(5,minmax(100px,100px))] shadow-2xl "
       >
-        <div class="text-white/75 text-xl" data-previous-operand></div>
-        <div class="text-white text-4xl" data-current-operand></div>
+        <div
+          id="output"
+          class="col-span-full bg-black/75 flex justify-around items-end flex-col p-[10px] break-all"
+        >
+          <div class="text-white/75 text-xl" data-previous-operand></div>
+          <div class="text-white text-4xl" data-current-operand></div>
+        </div>
+        <button class="btn col-span-2" data-all-clear>AC</button>
+        <button class="btn" data-delete>DEL</button>
+        <button class="btn" data-operation>÷</button>
+        <button class="btn" data-number>1</button>
+        <button class="btn" data-number>2</button>
+        <button class="btn" data-number>3</button>
+        <button class="btn" data-operation>*</button>
+        <button class="btn" data-number>4</button>
+        <button class="btn" data-number>5</button>
+        <button class="btn" data-number>6</button>
+        <button class="btn" data-operation>+</button>
+        <button class="btn" data-number>7</button>
+        <button class="btn" data-number>8</button>
+        <button class="btn" data-number>9</button>
+        <button class="btn" data-operation>-</button>
+        <button class="btn" data-number>.</button>
+        <button class="btn" data-number>0</button>
+        <button class="btn col-span-2" data-equals>=</button>
       </div>
-      <button class="btn col-span-2" data-all-clear>AC</button>
-      <button class="btn" data-delete>DEL</button>
-      <button class="btn" data-operation>÷</button>
-      <button class="btn" data-number>1</button>
-      <button class="btn" data-number>2</button>
-      <button class="btn" data-number>3</button>
-      <button class="btn" data-operation>*</button>
-      <button class="btn" data-number>4</button>
-      <button class="btn" data-number>5</button>
-      <button class="btn" data-number>6</button>
-      <button class="btn" data-operation>+</button>
-      <button class="btn" data-number>7</button>
-      <button class="btn" data-number>8</button>
-      <button class="btn" data-number>9</button>
-      <button class="btn" data-operation>-</button>
-      <button class="btn" data-number>.</button>
-      <button class="btn" data-number>0</button>
-      <button class="btn col-span-2" data-equals>=</button>
     </div>
   </body>
 </html>
