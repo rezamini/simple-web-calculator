@@ -23,14 +23,19 @@ class Calculator {
     }
 
     chooseOperation(operation){
-        if(this.currentOperand === '') return;
-        if(this.previousOperand !== '') {
-            this.compute();
+        if(this.currentOperand === ''){
+            //only updates the opeartion symbol in the previous operand
+            this.operation = operation;
+        }else{
+            if(this.previousOperand !== '') {
+                this.compute();
+            }
+            
+            //set the latest operation after the calculation otherwise the previously operation is overwritten
+            this.operation = operation;
+            this.previousOperand = this.currentOperand.toString() ;
+            this.currentOperand = '';
         }
-
-        this.operation = operation;
-        this.previousOperand = this.currentOperand.toString() ;
-        this.currentOperand = '';
     }
 
     compute() {
