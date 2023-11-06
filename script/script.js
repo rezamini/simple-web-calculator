@@ -26,6 +26,8 @@ class Calculator {
         if(this.currentOperand === ''){
             //only updates the opeartion symbol in the previous operand
             this.operation = operation;
+
+            if(this.previousOperand === '') this.previousOperand = '0';
         }else{
             if(this.previousOperand !== '') {
                 this.compute();
